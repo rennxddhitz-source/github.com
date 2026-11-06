@@ -1,0 +1,7 @@
+{
+  "id": "FEEL-LEVELUP",
+  "tweenDurationMs": 400,
+  "scaleSequence": [1.0, 1.2, 1.0],
+  "screenShakePx": 4,
+  "screenShakeDurationMs": 300
+}

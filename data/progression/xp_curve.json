@@ -1,0 +1,11 @@
+{
+  "baseXP": 100,
+  "multiplier": 1.4,
+  "levels": [
+    {"level": 1, "xpRequired": 0, "xpCumulative": 0, "unlock": "Kereta default"},
+    {"level": 2, "xpRequired": 100, "xpCumulative": 100, "unlock": "Upgrade gerbong tersedia"},
+    {"level": 3, "xpRequired": 140, "xpCumulative": 240, "unlock": "Rute wilayah kedua"},
+    {"level": 4, "xpRequired": 196, "xpCumulative": 436, "unlock": "Kereta jenis baru"},
+    {"level": 5, "xpRequired": 274, "xpCumulative": 710, "unlock": "Efisiensi bahan bakar +10%"}
+  ]
+}

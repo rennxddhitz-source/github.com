@@ -1,0 +1,9 @@
+{
+  "regions": [
+    {"id": "WLD-REG-01", "name": "Pegalmanan", "biome": "Pegunungan", "distanceMin": 50, "distanceMax": 150, "distanceAvg": 100, "levelUnlock": 1},
+    {"id": "WLD-REG-02", "name": "Dataran Indah", "biome": "Dataran Rendah", "distanceMin": 100, "distanceMax": 250, "distanceAvg": 175, "levelUnlock": 3},
+    {"id": "WLD-REG-03", "name": "Pantai Biru", "biome": "Pantai", "distanceMin": 150, "distanceMax": 350, "distanceAvg": 250, "levelUnlock": 5},
+    {"id": "WLD-REG-04", "name": "Gurun Kering", "biome": "Gurun", "distanceMin": 200, "distanceMax": 400, "distanceAvg": 300, "levelUnlock": 7},
+    {"id": "WLD-REG-05", "name": "Salju Abadi", "biome": "Tundra", "distanceMin": 300, "distanceMax": 500, "distanceAvg": 400, "levelUnlock": 10}
+  ]
+}

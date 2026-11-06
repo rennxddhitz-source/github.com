@@ -1,0 +1,7 @@
+{
+  "uiFeel": [
+    {"id": "UI-FEEL-01", "element": "Tombol tekan", "value": 100, "unit": "ms", "note": "Hit-stop visual"},
+    {"id": "UI-FEEL-02", "element": "Notifikasi muncul", "value": 300, "unit": "ms", "note": "Tween slide-up"},
+    {"id": "UI-FEEL-03", "element": "HUD shake warning", "value": 2, "unit": "px", "note": "Saat bahan bakar <5 unit"}
+  ]
+}

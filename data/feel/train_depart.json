@@ -1,0 +1,7 @@
+{
+  "id": "FEEL-DEPART",
+  "animDurationMs": 600,
+  "screenShakePx": 2,
+  "screenShakeDurationMs": 150,
+  "tween": "ease-out"
+}

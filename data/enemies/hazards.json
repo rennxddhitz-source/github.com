@@ -1,0 +1,16 @@
+{
+  "hazards": [
+    {"id": "ENM-01", "name": "Hujan Lepas", "effect": "Waktu tempuh +30%", "counter": "Tunggu lalu atau terima keterlambatan"},
+    {"id": "ENM-02", "name": "Longsor Tanah", "effect": "Kereta terpaksa berhenti", "counter": "Cari rute alternatif atau tunggu perbaikan"},
+    {"id": "ENM-03", "name": "Sabotase Rel", "effect": "Kecepatan -50%, bahan bakar boros 2x", "counter": "Perbaiki rel di stasiun berikutnya"},
+    {"id": "ENM-04", "name": "Perusahaan Rival", "effect": "Kontrak tersedia berkurang", "counter": "Selesaikan kontrak cepat untuk prioritas"},
+    {"id": "ENM-05", "name": "Bandit Rel", "effect": "Hilang 20% muatan jika berhenti >5 menit", "counter": "Jeda singkat atau pilihan beresiko"},
+    {"id": "ENM-06", "name": "Kerusakan Mesin", "effect": "Bahan bakar turun 2x lebih cepat", "counter": "Perawatan rutin di stasiun"},
+    {"id": "ENM-07", "name": "Stasiun Macet", "effect": "Tunda dock 3-10 menit", "counter": "Pilih stasiun lain jika tersedia"},
+    {"id": "ENM-08", "name": "Salju Lebat", "effect": "Kecepatan -60%, efisiensi bahan bakar turun", "counter": "Upgrade efisiensi atau hindari wilayah"}
+  ],
+  "bosses": [
+    {"id": "BOSS-01", "name": "Si Raksasa Rel", "location": "Wilayah 3", "condition": "Selesaikan 5 kontrak rute premium"},
+    {"id": "BOSS-02", "name": "Musim Salju Abadi", "location": "Wilayah 5", "condition": "Kumpulkan 1000 Gold untuk Pelana Salju"}
+  ]
+}

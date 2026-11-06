@@ -1,0 +1,13 @@
+{
+  "currency": "Gold",
+  "sources": [
+    {"id": "ECN-SRC-01", "name": "Delivery biasa", "amount": "80-150", "frequency": "Per kontrak"},
+    {"id": "ECN-SRC-02", "name": "Bonus kecepatan", "amount": 20, "frequency": "Opsional, selesai <80% waktu target"},
+    {"id": "ECN-SRC-03", "name": "Login harian", "amount": 50, "frequency": "Sekali per hari"}
+  ],
+  "sinks": [
+    {"id": "ECN-SNK-01", "name": "Upgrade kapasitas level 1", "cost": 100},
+    {"id": "ECN-SNK-02", "name": "Bahan bakar per unit", "cost": 2},
+    {"id": "ECN-SNK-03", "name": "Rescue kereta", "cost": 50}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "elements": [
+    {"id": "HUD-01", "name": "Bahan Bakar", "position": "Kiri atas", "default": "50/50 unit", "unit": "unit"},
+    {"id": "HUD-02", "name": "ETA", "position": "Kanan atas", "default": "00:00", "unit": "menit:detik"},
+    {"id": "HUD-03", "name": "Gold", "position": "Kiri bawah", "default": 0, "unit": "Gold"},
+    {"id": "HUD-04", "name": "XP", "position": "Kanan bawah", "default": "0/100", "unit": "XP"}
+  ]
+}

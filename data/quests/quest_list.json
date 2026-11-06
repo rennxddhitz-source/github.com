@@ -1,0 +1,14 @@
+{
+  "quests": [
+    {"id": "QST-01", "title": "Gerbong Pertama", "giver": "Pak Entis", "objective": "Selesaikan 1 rute Pegalmanan", "reward": "100 Gold, 25 XP", "type": "Tutorial"},
+    {"id": "QST-02", "title": "Antrik Pesawat", "giver": "Ibu Lina", "objective": "Kirim paket ke Dataran Indah", "reward": "150 Gold, 40 XP", "type": "Delivery"},
+    {"id": "QST-03", "title": "Bahan Bakar Habis", "giver": "Pak Entis", "objective": "Selamatkan kereta dari macet", "reward": "50 Gold, 20 XP", "type": "Rescue"},
+    {"id": "QST-04", "title": "Kontrak Rival", "giver": "Rival Dara", "objective": "Kalahkan rencana kereta lawan", "reward": "200 Gold, 60 XP", "type": "Kompetisi"},
+    {"id": "QST-05", "title": "Barang Langka", "giver": "Nenek Sari", "objective": "Antar barang rawan ke Pantai Biru", "reward": "300 Gold, 100 XP", "type": "Spesial"},
+    {"id": "QST-06", "title": "Darurat Medis", "giver": "Mas Arief", "objective": "Kirim obat dalam waktu terbatas", "reward": "250 Gold, 80 XP", "type": "Timed"},
+    {"id": "QST-07", "title": "Upgrade Mesin", "giver": "Pak Entis", "objective": "Upgrade efisiensi ke level 2", "reward": "100 Gold, 50 XP", "type": "Progresi"},
+    {"id": "QST-08", "title": "Rute Salju", "giver": "Ibu Lina", "objective": "Buka wilayah Salju Abadi", "reward": "500 Gold, 200 XP", "type": "Unlock"},
+    {"id": "QST-09", "title": "Perompakan Rel", "giver": "Bandit Rel (event)", "objective": "Hentikan pencurian muatan", "reward": "100 Gold, 30 XP", "type": "Pertahanan"},
+    {"id": "QST-10", "title": "Raja Kereta", "giver": "Semua NPC", "objective": "Selesaikan semua wilayah", "reward": "1000 Gold, 500 XP", "type": "Finale"}
+  ]
+}

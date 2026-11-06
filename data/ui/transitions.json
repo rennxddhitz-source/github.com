@@ -1,0 +1,7 @@
+{
+  "transitions": [
+    {"id": "UI-TRN-01", "from": "Main Menu", "to": "Stasiun", "durationMs": 300, "type": "fade-in"},
+    {"id": "UI-TRN-02", "from": "Stasiun", "to": "Peta", "durationMs": 250, "type": "slide-left"},
+    {"id": "UI-TRN-03", "from": "Transit", "to": "Hasil", "durationMs": 400, "type": "scale-up"}
+  ]
+}

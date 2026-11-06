@@ -1,0 +1,7 @@
+{
+  "offers": [
+    {"id": "OFF-01", "name": "Paket Starter", "price": 49000, "currency": "IDR", "content": "500 Gold + 5 Bahan Bakar Instan", "type": "Convenience"},
+    {"id": "OFF-02", "name": "Skin Gerbong Emas", "price": 29000, "currency": "IDR", "content": "Kosmetik gerbong utama", "type": "Kosmetik"},
+    {"id": "OFF-03", "name": "Slot Kereta Tambahan", "price": 79000, "currency": "IDR", "content": "Buka slot kereta ke-2", "type": "Convenience"}
+  ]
+}
