@@ -1,0 +1,7 @@
+id: CON-PAY-01
+category: CON
+name: PAY
+value: 50
+unit: Gold
+source: ASUMSI-09
+description: Bayaran minimum per kontrak

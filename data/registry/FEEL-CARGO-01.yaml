@@ -1,0 +1,7 @@
+id: FEEL-CARGO-01
+category: FEEL
+name: CARGO
+value: 12
+unit: count
+source: ASUMSI-12
+description: Partikel muatan masuk per gerbong

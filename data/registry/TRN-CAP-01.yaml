@@ -1,0 +1,7 @@
+id: TRN-CAP-01
+category: TRN
+name: CAP
+value: 10
+unit: ton
+source: ASUMSI-04
+description: Kapasitas gerbong default

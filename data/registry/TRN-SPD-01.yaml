@@ -1,0 +1,7 @@
+id: TRN-SPD-01
+category: TRN
+name: SPD
+value: 20
+unit: km/menit
+source: ASUMSI-01
+description: Kecepatan dasar kereta

@@ -1,0 +1,7 @@
+id: FEEL-DEPART-01
+category: FEEL
+name: DEPART
+value: 600
+unit: ms
+source: ASUMSI-12
+description: Durasi animasi keberangkatan

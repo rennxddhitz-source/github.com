@@ -1,0 +1,7 @@
+id: UPG-CAP-01
+category: UPG
+name: CAP
+value: 100
+unit: Gold
+source: ASUMSI-07
+description: Harga base upgrade kapasitas

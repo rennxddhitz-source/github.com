@@ -1,0 +1,7 @@
+id: RTE-DIST-02
+category: RTE
+name: DIST
+value: 500
+unit: km
+source: ASUMSI-02
+description: Jarak rute maksimum

@@ -1,0 +1,7 @@
+id: FEEL-LEVELUP-01
+category: FEEL
+name: LEVELUP
+value: 400
+unit: ms
+source: ASUMSI-12
+description: Tween duration naik level

@@ -1,0 +1,7 @@
+id: CON-PAY-02
+category: CON
+name: PAY
+value: 500
+unit: Gold
+source: ASUMSI-09
+description: Bayaran maksimum per kontrak

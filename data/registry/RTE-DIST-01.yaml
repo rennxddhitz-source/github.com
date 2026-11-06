@@ -1,0 +1,7 @@
+id: RTE-DIST-01
+category: RTE
+name: DIST
+value: 50
+unit: km
+source: ASUMSI-02
+description: Jarak rute minimum

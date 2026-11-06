@@ -1,0 +1,7 @@
+id: TRN-FUEL-01
+category: TRN
+name: FUEL
+value: 50
+unit: unit
+source: ASUMSI-04
+description: Kapasitas tangki default

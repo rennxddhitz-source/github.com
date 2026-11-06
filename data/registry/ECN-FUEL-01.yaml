@@ -1,0 +1,7 @@
+id: ECN-FUEL-01
+category: ECN
+name: FUEL
+value: 2
+unit: Gold/unit
+source: ASUMSI-06
+description: Harga bahan bakar per unit

@@ -1,0 +1,7 @@
+id: CON-DIST-01
+category: CON
+name: DIST
+value: 0.8
+unit: Gold/km
+source: ASUMSI-10
+description: Perkalian bayaran per km

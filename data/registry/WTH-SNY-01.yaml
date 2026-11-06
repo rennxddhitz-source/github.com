@@ -1,0 +1,7 @@
+id: WTH-SNY-01
+category: WTH
+name: SNY
+value: 0.5
+unit: faktor
+source: ASUMSI-03
+description: Faktor cuaca salju

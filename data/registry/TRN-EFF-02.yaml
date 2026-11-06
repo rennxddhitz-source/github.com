@@ -1,0 +1,7 @@
+id: TRN-EFF-02
+category: TRN
+name: EFF
+value: 0.015
+unit: faktor/ton/km
+source: ASUMSI-05
+description: Faktor efisiensi gerbong upgrade
