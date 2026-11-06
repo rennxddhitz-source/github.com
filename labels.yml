@@ -1,0 +1,22 @@
+labels:
+  - name: moonshot
+    color: "7b1fa2"
+    description: Ide gila/berisiko tinggi yang dipastikan (The Sacred Risk)
+  - name: sacred-risk
+    color: "b60205"
+    description: Issue terkait Sacred Risk yang harus dipertahankan
+  - name: playtest-question
+    color: "1d76db"
+    description: Pertanyaan yang harus dijawab pemain sebelum lanjut
+  - name: balance-fail
+    color: "d93f0b"
+    description: Kurva atau angka yang gagal sanity check
+  - name: risk
+    color: "fbca04"
+    description: Risiko teknis, desain, atau kualitas
+  - name: docs
+    color: "006b75"
+    description: Dokumentasi GDD
+  - name: implementation
+    color: "28a745"
+    description: Kode implementasi game
