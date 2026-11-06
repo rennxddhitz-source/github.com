@@ -1,0 +1,18 @@
+{
+  "stateMachine": "TRAIN",
+  "states": ["IDLE", "DEPARTING", "EN_ROUTE", "DOCKING", "REFUELING", "BROKEN_DOWN"],
+  "transitions": [
+    {"from": "IDLE", "to": "DEPARTING", "trigger": "onDepart", "condition": "train.fuelCurrent > route.fuelRequired"},
+    {"from": "DEPARTING", "to": "EN_ROUTE", "trigger": "animationComplete"},
+    {"from": "EN_ROUTE", "to": "DOCKING", "trigger": "distanceCovered >= route.distance"},
+    {"from": "EN_ROUTE", "to": "BROKEN_DOWN", "trigger": "train.fuelCurrent <= 0"},
+    {"from": "DOCKING", "to": "IDLE", "trigger": "dockProgress >= dockDuration"},
+    {"from": "BROKEN_DOWN", "to": "IDLE", "trigger": "rescueCompleted"}
+  ],
+  "sideEffects": {
+    "DEPARTING": "trigger(FEEL-DEPART-01, FEEL-DEPART-02)",
+    "EN_ROUTE": "fuelCurrent -= consumptionRate(deltaTime, weather); distanceCovered += speed(deltaTime, weather)",
+    "DOCKING": "dockProgress += deltaTime; completeRoute(route)",
+    "BROKEN_DOWN": "showRescueOption(cost: 50 Gold)"
+  }
+}

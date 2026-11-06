@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Train Cargo Game Data Schema",
+  "type": "object",
+  "properties": {
+    "player": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string"},
+        "level": {"type": "integer", "minimum": 1},
+        "xp": {"type": "integer", "minimum": 0},
+        "gold": {"type": "integer", "minimum": 0},
+        "train": {"$ref": "#/definitions/train"}
+      },
+      "required": ["id", "level", "xp", "gold", "train"]
+    },
+    "train": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string"},
+        "speed": {"type": "number"},
+        "capacity": {"type": "integer"},
+        "fuelCapacity": {"type": "integer"},
+        "fuelCurrent": {"type": "integer"},
+        "efficiency": {"type": "number"}
+      },
+      "required": ["id", "speed", "capacity", "fuelCapacity", "fuelCurrent", "efficiency"]
+    },
+    "route": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string"},
+        "distance": {"type": "number"},
+        "regionId": {"type": "string"},
+        "weather": {"type": "string"},
+        "reward": {"type": "integer"},
+        "status": {"type": "string", "enum": ["available", "active", "completed", "failed"]}
+      },
+      "required": ["id", "distance", "regionId", "reward", "status"]
+    }
+  },
+  "required": ["player", "train"]
+}

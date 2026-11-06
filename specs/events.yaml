@@ -1,0 +1,17 @@
+events:
+  - id: EVT-01
+    trigger: train.fuelCurrent < 5
+    handler: showFuelWarning
+    example: FEEL-WARN-01: berkedip merah
+  - id: EVT-02
+    trigger: route.completed
+    handler: grantReward
+    example: Gold + XP masuk ke player
+  - id: EVT-03
+    trigger: hazard.spawned
+    handler: pauseTrain
+    example: Train berhenti, UI hazard muncul
+  - id: EVT-04
+    trigger: player.levelUp
+    handler: unlockRegion
+    example: Tampilkan wilayah baru di peta
