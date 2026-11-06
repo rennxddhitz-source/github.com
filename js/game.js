@@ -1,7 +1,7 @@
 /**
- * Game.js — Logika utama game (Vertical Slice + Milestone 02)
- * Ref: docs/03-06-mechanics.md, docs/04-progression-economy.md, milestones/01-02
- * Integrasi: Train, Route, UI, Weather, Hazard, Upgrade, Economy
+ * Game.js — Logika utama game (Vertical Slice + Milestone 02 + 03)
+ * Ref: docs/03-07-mechanics.md, docs/04-progression-economy.md, milestones/01-03
+ * Integrasi: Train, Route, UI, Weather, Hazard, Upgrade, Economy, Quest, Save, Monetization
  */
 
 import { Train } from './train.js';
@@ -10,6 +10,9 @@ import { WeatherSystem } from './weather.js';
 import { HazardSystem } from './hazard.js';
 import { UpgradeSystem } from './upgrade.js';
 import { EconomySystem } from './economy.js';
+import { QuestSystem } from './quest.js';
+import { SaveSystem } from './save.js';
+import { MonetizationSystem } from './monetization.js';
 import { UI } from './ui.js';
 
 class Game {
@@ -20,6 +23,9 @@ class Game {
     this.hazards = new HazardSystem();
     this.upgrades = new UpgradeSystem();
     this.economy = new EconomySystem();
+    this.questSystem = new QuestSystem();
+    this.monetization = new MonetizationSystem();
+    this.saveSystem = new SaveSystem(this);
 
     this.player = {
       level: { current: 1, next: 100 },
@@ -39,6 +45,7 @@ class Game {
   }
 
   init() {
+    // Event listeners
     document.getElementById('btn-start').onclick = () => this.ui.showScreen('station');
     document.getElementById('btn-load').onclick = () => this.loadGame();
     document.getElementById('btn-view-map').onclick = () => this.openMap();
@@ -47,6 +54,16 @@ class Game {
     document.getElementById('btn-back-station').onclick = () => this.ui.showScreen('station');
     document.getElementById('btn-back-station-from-result').onclick = () => this.ui.showScreen('station');
     document.getElementById('btn-pause-transit').onclick = () => this.togglePause();
+
+    // Event listener untuk pembelian monetisasi
+    window.addEventListener('monetization-purchase', (e) => {
+      const { offerId, gold, fuel, cosmetic, extraTrainSlot } = e.detail;
+      if (gold) this.economy.addGold(gold);
+      if (fuel) this.train.fuelCurrent = Math.min(this.train.fuelCurrent + fuel, this.train.fuelCapacity);
+      if (cosmetic) console.log('Kosmetik dibuka:', cosmetic);
+      if (extraTrainSlot) console.log('Slot kereta tambahan dibuka');
+      this.ui.updateStationHUD(this.getPlayerState());
+    });
 
     this.ui.showScreen('main-menu');
     this.ui.updateStationHUD(this.getPlayerState());
@@ -95,7 +112,6 @@ class Game {
     const region = REGIONS[this.currentRegionId];
     if (!region) return;
 
-    // Cek unlock level
     if (this.economy.level < region.levelUnlock) {
       alert(`Butuh Level ${region.levelUnlock} untuk membuka ${region.name}`);
       return;
@@ -114,9 +130,8 @@ class Game {
       return;
     }
 
-    // Cek hazard blokir
     if (this.hazards.isRouteBlocked()) {
-      alert('Rute tersedia sedang diblokir oleh hazard! Tunggu hingga hilang.');
+      alert('Rute sedang diblokir oleh hazard! Tunggu hingga hilang.');
       return;
     }
 
@@ -141,7 +156,6 @@ class Game {
       const progressPercent = Math.min(100, (elapsedSeconds / travelTimeSeconds) * 100);
       const remainingSeconds = Math.max(0, travelTimeSeconds - elapsedSeconds);
 
-      // Kurangi bahan bakar secara bertahap
       const fuelBurnPerTick = (fuelNeeded / travelTimeSeconds) * 0.1;
       const fuelPenalty = this.hazards.getTotalFuelPenalty();
       this.train.fuelCurrent = Math.max(0, this.train.fuelCurrent - (fuelBurnPerTick * fuelPenalty));
@@ -161,14 +175,16 @@ class Game {
   handleHazardUpdates(newHazards) {
     newHazards.forEach(hazard => {
       this.ui.addTransitLog(`⚠️ ${hazard.name}: ${hazard.effect}`);
+      this.questSystem.updateStat('hazardSurvived', 1);
       if (hazard.id === 'ENM-02') {
-        this.ui.addTransitLog('Rel diblokir! Tunggu hazard hilang atau cari alternatif.');
+        this.ui.addTransitLog('Rel diblokir! Tunggu hazard hilang.');
       }
     });
   }
 
   handleBreakdown() {
     clearInterval(this.transitInterval);
+    this.questSystem.updateStat('rescueCount', 1);
     this.ui.showScreen('station');
     alert('Kereta rusak! Biaya rescue: 50 Gold.');
     this.ui.updateStationHUD(this.getPlayerState());
@@ -181,10 +197,13 @@ class Game {
 
   finishTransit(route) {
     const reward = this.economy.getContractReward(route.distance, route.cargoType);
-    const xpGain = 25; // PLR-XP-02
+    const xpGain = 25;
 
     this.economy.addGold(reward);
     const leveledUp = this.economy.addXP(xpGain);
+
+    this.questSystem.updateStat('routesCompleted', 1);
+    this.questSystem.updateStat(`routesByRegion.${this.currentRegionId}`, 1);
 
     this.train.state = 'IDLE';
     this.currentRoute = null;
@@ -197,8 +216,10 @@ class Game {
       leveledUp
     });
 
+    this.saveSystem.save();
+
     if (leveledUp) {
-      setTimeout(() => alert(`Selamat! Anda naik ke Level ${this.economy.level}!`), 500);
+      setTimeout(() => alert(`Selamat! Naik ke Level ${this.economy.level}!`), 500);
     }
   }
 
@@ -224,15 +245,7 @@ class Game {
   }
 
   loadGame() {
-    const saved = localStorage.getItem('tinyrails-save');
-    if (saved) {
-      const data = JSON.parse(saved);
-      this.economy.gold = data.player?.gold ?? 0;
-      this.economy.xp = data.player?.xp ?? 0;
-      this.economy.level = data.player?.level ?? 1;
-      this.economy.xpNext = data.player?.xpNext ?? 100;
-      this.train.fuelCurrent = data.train?.fuelCurrent ?? 50;
-      this.currentRegionId = data.player?.currentRegionId ?? 'WLD-REG-01';
+    if (this.saveSystem.load()) {
       this.ui.updateStationHUD(this.getPlayerState());
       this.ui.showScreen('station');
     } else {
@@ -241,22 +254,8 @@ class Game {
   }
 
   saveGame() {
-    const data = {
-      player: {
-        gold: this.economy.gold,
-        xp: this.economy.xp,
-        level: this.economy.level,
-        xpNext: this.economy.xpNext,
-        currentRegionId: this.currentRegionId
-      },
-      train: {
-        fuelCurrent: this.train.fuelCurrent,
-        speed: this.train.speed,
-        capacity: this.train.capacity,
-        efficiency: this.train.efficiency
-      }
-    };
-    localStorage.setItem('tinyrails-save', JSON.stringify(data));
+    this.saveSystem.save();
+    alert('Game tersimpan!');
   }
 }
 
