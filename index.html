@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiny Rails — Raja Kereta 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- Main Menu -->
+    <div id="screen-main-menu" class="screen active">
+      <h1>Tiny Rails</h1>
+      <h2>Raja Kereta 2026</h2>
+      <button id="btn-start">Mulai Baru</button>
+      <button id="btn-load">Muat Game</button>
+    </div>
+
+    <!-- Stasiun Hub -->
+    <div id="screen-station" class="screen">
+      <div class="hud">
+        <div class="hud-item" id="hud-fuel">Bahan Bakar: <span id="val-fuel">50</span>/50</div>
+        <div class="hud-item" id="hud-gold">Gold: <span id="val-gold">0</span></div>
+        <div class="hud-item" id="hud-xp">XP: <span id="val-xp">0</span>/100</div>
+        <div class="hud-item" id="hud-level">Level: <span id="val-level">1</span></div>
+      </div>
+      <div class="station-content">
+        <h3>Stasiun Pegalmanan</h3>
+        <div class="station-actions">
+          <button id="btn-view-map">Lihat Peta</button>
+          <button id="btn-view-train">Manajemen Kereta</button>
+          <button id="btn-view-contracts">Lihat Kontrak</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Peta Dunia -->
+    <div id="screen-map" class="screen">
+      <div class="hud">
+        <div class="hud-item" id="map-hud-fuel">BB: <span id="map-val-fuel">50</span>/50</div>
+        <div class="hud-item" id="map-hud-gold">Gold: <span id="map-val-gold">0</span></div>
+        <button id="btn-back-station">Kembali ke Stasiun</button>
+      </div>
+      <h3>Pilih Rute</h3>
+      <div id="route-list" class="route-list">
+        <!-- Rute diisi oleh JavaScript -->
+      </div>
+    </div>
+
+    <!-- Transit -->
+    <div id="screen-transit" class="screen">
+      <div class="hud">
+        <div class="hud-item" id="transit-hud-fuel">BB: <span id="transit-val-fuel">50</span>/50</div>
+        <div class="hud-item" id="transit-hud-eta">ETA: <span id="transit-val-eta">00:00</span></div>
+        <div class="hud-item" id="transit-hud-progress">Progress: <span id="transit-val-progress">0</span>%</div>
+        <button id="btn-pause-transit">Jeda</button>
+      </div>
+      <div class="transit-visual">
+        <div id="train-icon">🚂</div>
+        <div id="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="transit-log">Kereta berangkat...</div>
+      </div>
+    </div>
+
+    <!-- Hasil Delivery -->
+    <div id="screen-result" class="screen">
+      <div class="hud">
+        <button id="btn-back-station-from-result">Kembali ke Stasiun</button>
+      </div>
+      <h3>Delivery Selesai!</h3>
+      <div id="result-details">
+        <!-- Detail diisi oleh JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/train.js"></script>
+  <script src="js/route.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
