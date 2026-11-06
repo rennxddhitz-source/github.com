@@ -1,0 +1,7 @@
+id: HUD-03
+category: HUD
+name: Gold
+value: 0
+unit: Gold
+source: ASUMSI-22
+description: Mata uang pemain

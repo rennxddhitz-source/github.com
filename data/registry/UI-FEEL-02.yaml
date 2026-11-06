@@ -1,0 +1,7 @@
+id: UI-FEEL-02
+category: UI
+name: FEEL
+value: 300
+unit: ms
+source: ASUMSI-21
+description: Tween notifikasi muncul

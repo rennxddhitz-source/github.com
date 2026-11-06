@@ -1,0 +1,7 @@
+id: FEEL-HAZARD-01
+category: FEEL
+name: HAZARD
+value: 3
+unit: px
+source: ASUMSI-19
+description: Screen shake saat hazard muncul

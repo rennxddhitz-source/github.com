@@ -1,0 +1,6 @@
+id: ENM-05
+category: ENM
+name: Bandit Rel
+unit: tipe
+source: ASUMSI-15
+description: Curigakan muatan jika berhenti >5 menit

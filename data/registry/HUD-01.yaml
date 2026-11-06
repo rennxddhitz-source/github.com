@@ -1,0 +1,7 @@
+id: HUD-01
+category: HUD
+name: Fuel
+value: "50/50"
+unit: unit
+source: ASUMSI-22
+description: Indikator bahan bakar

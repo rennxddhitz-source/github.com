@@ -1,0 +1,7 @@
+id: HUD-04
+category: HUD
+name: XP
+value: "0/100"
+unit: XP
+source: ASUMSI-22
+description: Panca pencapaian XP

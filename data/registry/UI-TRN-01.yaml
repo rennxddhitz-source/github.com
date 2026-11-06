@@ -1,0 +1,7 @@
+id: UI-TRN-01
+category: UI
+name: TRN
+value: 300
+unit: ms
+source: ASUMSI-21
+description: Transisi Main Menu ke Stasiun

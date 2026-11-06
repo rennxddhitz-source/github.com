@@ -1,0 +1,7 @@
+id: HUD-02
+category: HUD
+name: ETA
+value: "00:00"
+unit: menit:detik
+source: ASUMSI-22
+description: Estimasi waktu tiba

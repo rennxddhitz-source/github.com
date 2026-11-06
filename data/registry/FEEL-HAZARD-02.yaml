@@ -1,0 +1,7 @@
+id: FEEL-HAZARD-02
+category: FEEL
+name: HAZARD
+value: 200
+unit: ms
+source: ASUMSI-19
+description: Durasi shake hazard
